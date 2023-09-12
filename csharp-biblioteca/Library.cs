@@ -9,9 +9,17 @@ namespace csharp_biblioteca
 {
     public class Library
     {
-        public List<Document> Documents = new List<Document>();
-        public List<User> Users = new List<User>();
-        public List<Loan> Loans = new List<Loan>();
+        public List<Document> Documents { get; set; }
+        public List<User> Users { get; set; }
+        public List<Loan> Loans { get; set; }
+
+        //COSTRUTTORE
+        public Library() 
+        {
+            Documents = new List<Document>();
+            Users = new List<User>();
+            Loans = new List<Loan>();
+        }
 
         //METODI
         public void AddDocument(Document document)
@@ -27,6 +35,18 @@ namespace csharp_biblioteca
         public void AddLoan(Loan loan)
         {
             Loans.Add(loan);
+        }
+
+        public Document SearchCode(string code)
+        {
+            return Documents.Find(doc => doc.Code == code);
+             
+        }
+
+        public Document SearchTitle(string title)
+        {
+            return Documents.Find(doc => doc.Title == title);
+           
         }
     }
 

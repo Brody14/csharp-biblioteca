@@ -23,7 +23,7 @@ namespace csharp_biblioteca
         public override void PrintInfo()
         {
             base.PrintInfo();
-            Console.WriteLine($"\n\tDurata: {this.Length}");
+            Console.Write($"\tDurata: {this.Length} minuti");
         }
     }
 }

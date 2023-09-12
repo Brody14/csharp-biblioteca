@@ -23,7 +23,7 @@ namespace csharp_biblioteca
         public override void PrintInfo()
         {
             base.PrintInfo();
-            Console.WriteLine($"\n\tNumero di pagine: {this.PageNumber}");
+            Console.Write($"\tNumero di pagine: {this.PageNumber}");
         }
     }
 }
