@@ -48,6 +48,31 @@ namespace csharp_biblioteca
             return Documents.Find(doc => doc.Title == title);
            
         }
+
+        //registrare un prestito
+
+        public void RegisterNewLoan(User user, Document document, DateTime startDate, DateTime endDate)
+        {
+            if(!Users.Contains(user))
+            {
+                Console.WriteLine("Utente non registrato");
+            }
+
+            if (!Documents.Contains(document))
+            {
+                Console.WriteLine("Documento non trovato");
+            }
+
+            Loan newLoan = new Loan(startDate, endDate, user, document);
+            Loans.Add(newLoan);
+        }
+
+        //ricerca utente
+
+        public List<Loan> SearchLoanFromUser(string firstName, string lastName)
+        {
+            return Loans.FindAll(loan => loan.User.FirstName == firstName && loan.User.LastName == lastName);
+        }
     }
 
     
